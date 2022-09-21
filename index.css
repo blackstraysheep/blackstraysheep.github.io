@@ -3,5 +3,5 @@
    src: url('"NotoSansJP-Regular.otf"') format("opentype");}
 
 h1 {
-    font-family: bokutachi;
+    font-family: NotoSansJP-Regular;
 }
