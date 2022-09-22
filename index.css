@@ -1,7 +1,7 @@
 @font-face {
    font-family: bokutachi;
-   src: url('"NotoSansJP-Regular.otf"') format("opentype");}
+   src: url('"NotoSansJP-Black.otf"') format("opentype");}
 
 h1 {
-    font-family: NotoSansJP-Regular;
+    font-family: NotoSansJP-Black.otf;
 }
