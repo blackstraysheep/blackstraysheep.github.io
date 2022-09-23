@@ -1,0 +1,101 @@
+@import url(http://fonts.googleapis.com/earlyaccess/notosansjp.css);
+h1 {
+font-@import url(http://fonts.googleapis.com/earlyaccess/notosansjp.css);
+h1 {
+font-weight:400;
+font-size: 2em;
+}
+
+body {
+font-family: 'Noto Sans JP', sans-serif;
+background-color: green;
+font-size: 1em;
+font-weight:400;
+color: white;
+    }
+
+.studytex {
+font-family: 'Noto Sans JP', sans-serif;
+background-color: green;
+font-size: 2.5em;
+font-weight:700;
+color: white;
+    }
+
+
+.weight100   {
+    font-weight:100
+    }
+ 
+.weight300   {
+    font-weight:300
+    }
+ 
+.weight400   {
+    font-weight:400
+    }
+ 
+.weight500   {
+    font-weight:500
+    }
+ 
+.weight600   {
+    font-weight:600
+    }
+ 
+.weight700   {
+    font-weight:700
+    }
+ 
+.weight900   {
+    font-weight:900
+    }
+
+:400;
+font-size: 2em;
+}
+
+body {
+font-family: 'Noto Sans JP', sans-serif;
+background-color:  blue;
+font-size: 1em;
+color: white;
+    }
+
+.studytex {
+font-family: 'Noto Sans JP', sans-serif;
+background-color: blue;
+font-size: 2.5em;
+font-weight:700;
+color: white;
+    }
+
+
+.weight100   {
+    font-weight:100
+    }
+ 
+.weight300   {
+    font-weight:300
+    }
+ 
+.weight400   {
+    font-weight:400
+    }
+ 
+.weight500   {
+    font-weight:500
+    }
+ 
+.weight600   {
+    font-weight:600
+    }
+ 
+.weight700   {
+    font-weight:700
+    }
+ 
+.weight900   {
+    font-weight:900
+    }
+
