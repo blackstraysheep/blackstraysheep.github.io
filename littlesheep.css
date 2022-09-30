@@ -4,7 +4,7 @@ font-weight:400;
 font-size: 2em;
 }
 
-h {
+h1 {
 font-family: 'Noto Sans JP', sans-serif;
 background-color: #ffff02;
 font-size: 1em;
@@ -15,6 +15,12 @@ font-family: 'Noto Sans JP', sans-serif;
 background-color: #2b0404;
 font-size: 1em;
 color: white;
+    }
+body {
+font-family: 'Noto Sans JP', sans-serif;
+background-color: white;
+font-size: 1em;
+color: black;
     }
 
 .studytex {
