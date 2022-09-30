@@ -4,9 +4,15 @@ font-weight:400;
 font-size: 2em;
 }
 
-body {
+h {
 font-family: 'Noto Sans JP', sans-serif;
 background-color: #ffff02;
+font-size: 1em;
+color: black;
+    }
+p {
+font-family: 'Noto Sans JP', sans-serif;
+background-color: #2b0404;
 font-size: 1em;
 color: white;
     }
