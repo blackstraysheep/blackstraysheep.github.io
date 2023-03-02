@@ -1,0 +1,80 @@
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="https://pyscript.net/alpha/pyscript.css" />
+    <script defer src="https://pyscript.net/alpha/pyscript.js"></script>
+    <title>川西とバトル！！</title>
+  </head>
+
+<body>
+<h1>川西とバトル！！</h1>
+<p>ブラウザ再読み込みで再バトルできます。</p>
+<main class="py-5 grid gap-y-4 grid-cols-1 place-items-center">
+<p id="honbun" class="text-left text-2xl"></p>
+</div>
+</main>
+
+<py-script output="honbun">
+# coding: utf-8
+# whileによるループ処理
+import random
+koaisuu = 1
+kwnshp = 200# カウンタ変数を初期化
+myhp = 100
+while myhp > 0 and kwnshp > 0 and koaisuu <= 10:
+    print(str(koaisuu) + "回目の こうげき ！")
+    hit = random.randint(-10, 25)
+    if hit > 0:
+        print("川西 に" + str(hit) + "のダメージを与えた！" )# 繰り返し処理
+        kwnshp -= hit 
+    elif hit == 0:
+        print("川西 は こうげき を回避した！" )# 繰り返し処理
+    else:
+        hit = -hit
+        print("川西 は こうげき を回避した！" )
+        print("川西 の はんげき ！" )
+        print("川西 から" + str(hit) + "のダメージを受けた！" )# 繰り返し処理
+        myhp -= hit 
+    if myhp <= 0:
+        print("\n")
+        print("<<<ポアされてしまった！>>>")
+    elif kwnshp <= 0:
+        print("\n")
+        print("<<<川西 を倒した！>>>")
+    else:
+        print("川西 のHP=" + str(kwnshp))
+        print("自分 のHP=" + str(myhp))
+        print(str(koaisuu) + "回目の こうげき が終わった！\n \n")
+        koaisuu += 1
+if myhp > 0 and kwnshp > 0:
+    print("<<<Warning! 川西 が狂暴化してしまった！>>>\n")
+    while myhp > 0 and kwnshp > 0 and koaisuu >= 10:
+        print(str(koaisuu) + "回目の こうげき ！")
+        hit = random.randint(-50, 25)
+        if hit > 0:
+            print("川西 に" + str(hit) + "のダメージを与えた！" )# 繰り返し処理
+            kwnshp -= hit 
+        elif hit == 0:
+            print("川西 は こうげき を回避した！" )# 繰り返し処理
+        else:
+            hit = -hit
+            print("川西 は こうげき を回避した！" )
+            print("川西 の はんげき ！" )
+            print("川西 から" + str(hit) + "のダメージを受けた！" )# 繰り返し処理
+            myhp -= hit 
+        if myhp <= 0:
+            print("\n")
+            print("<<<ポアされてしまった！>>>")
+        elif kwnshp <= 0:
+            print("\n")
+            print("<<<川西 を倒した！>>>")
+        else:
+            print("川西 のHP=" + str(kwnshp))
+            print("自分 のHP=" + str(myhp))
+            print(str(koaisuu) + "回目の こうげき が終わった！\n \n")
+            koaisuu += 1
+else:
+    print("<<<勝利！>>>")
+</py-script>
+</body>
+</html>
