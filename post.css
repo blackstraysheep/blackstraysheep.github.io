@@ -1,0 +1,28 @@
+:root {
+  --primary-color: #E60012;
+  --secondary-color: #FFFFFF;
+  --text-color: #333333;
+  --font: 'Noto Sans JP', sans-serif;
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: var(--font); color: var(--text-color); background: var(--secondary-color); line-height: 1.6; }
+.container { width: 90%; max-width: 1000px; margin: auto; padding: 0 0; }
+
+/* Blog-specific */
+.post-date {
+  color: #777;
+  font-size: 0.9rem;
+  margin-bottom: 1rem;
+}
+
+/* Blog two-column layout */
+.content{
+  flex: 1 1 auto;
+}
+
+.content-area {
+  display: flex;
+  gap: 2rem;
+  height: calc(100vh - 240px);
+  margin-top: 0px;
+}

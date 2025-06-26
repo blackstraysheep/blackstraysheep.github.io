@@ -3,58 +3,40 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Blog - Kengo</title>
+  <title>Cold Villege - BlackStraySheep</title>
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../styles.css">
 </head>
 <body>
   <header>
     <div class="container">
-      <h1 class="logo">Kengo</h1>
+      <h1 class="logo">Cold Villege</h1>
       <button class="nav-toggle" aria-label="Toggle navigation">
         <span class="hamburger"></span>
       </button>
       <nav>
         <ul class="nav-list">
           <li><a href="../index.html">Home</a></li>
-          <li><a href="#archive">Archive</a></li>
+          <li><a href="#content">Blog</a></li>
           <li><a href="../index.html#contact">Contact</a></li>
         </ul>
       </nav>
     </div>
   </header>
 
-  <section id="archive" class="container" style="margin-top:60px;">
-    <h2>Archive</h2>
-    <ul class="archive-list">
-      <li><a href="#2025-06">2025年6月</a></li>
-      <li><a href="#2025-05">2025年5月</a></li>
-      <li><a href="#2025-04">2025年4月</a></li>
-      <!-- 必要に応じて追加 -->
-    </ul>
-  </section>
-
-  <section id="blog-list" class="container">
-    <h2 id="2025-06">2025年6月</h2>
-    <div class="grid">
-      <div class="card">
-        <a href="post.html"><h3>サンプルブログタイトル1</h3></a>
-        <p class="post-date">2025-06-25</p>
-        <p>こちらはブログ記事の概要です。詳細内容に誘導します。</p>
-      </div>
-      <!-- 他の6月記事 -->
+  <div class="container content-area">
+    <aside class="sidebar">
+      <h2>Archive</h2>
+      <ul class="sidebar-list">
+        <li><a href="post1.html" class="post-link" target="post-frame"></a></li>
+        <li><a href="post2.html" class="post-link" target="post-frame"></a></li>
+        <!-- 他の月別リンク -->
+      </ul>
+    </aside>
+    <div class="content">
+      <iframe id="post-frame" name="post-frame" src="post.html"></iframe>
     </div>
-
-    <h2 id="2025-05">2025年5月</h2>
-    <div class="grid">
-      <div class="card">
-        <a href="post.html"><h3>サンプルブログタイトル2</h3></a>
-        <p class="post-date">2025-05-20</p>
-        <p>こちらは別のブログ記事の概要です。詳細内容に誘導します。</p>
-      </div>
-      <!-- 他の5月記事 -->
-    </div>
-  </section>
+  </div>
 
   <footer>
     <p>&copy; 2025 BlackStraySheep.</p>
