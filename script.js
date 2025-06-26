@@ -12,7 +12,7 @@ document.addEventListener('DOMContentLoaded', function(){
      .then(res => res.text())
      .then(html => {
        const doc = new DOMParser().parseFromString(html, 'text/html');
-       const title = doc.querySelector('#post-content h2')?.textContent.trim();
+       const title = doc.querySelector('#post-content h1')?.textContent.trim();
        const date  = doc.querySelector('.post-date')?.textContent.trim();
        link.textContent = date && title
          ? `${date} – ${title}`
