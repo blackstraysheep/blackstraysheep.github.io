@@ -3,14 +3,14 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ブログタイトル - Kengo</title>
+  <title>ブログタイトル - BlackStraySheep</title>
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="../styles.css">
 </head>
 <body>
   <header>
     <div class="container">
-      <h1 class="logo">Kengo</h1>
+      <h1 class="logo">BlackStraySheep</h1>
       <button class="nav-toggle" aria-label="Toggle navigation">
         <span class="hamburger"></span>
       </button>
@@ -24,14 +24,23 @@
     </div>
   </header>
   <section id="post-content" class="container" style="margin-top:60px;">
-    <h2>ブログタイトル</h2>
-    <p class="post-date">2025-06-25</p>
+    <h2>Excel/Google Spreadsheetでの縦書き</h2>
+    <p class="post-date">2025-06-26</p>
     <article>
-      <p>ここにブログ記事の本文を記載します。画像やコードスニペットなども追加可能です。</p>
+      <p>ExcelやGoogle Spreadsheetで縦書きを実現する方法についての備忘録．</p>
+      <h3>Excelでの縦書き</h3>
+      <p>ファイル＞オプション＞詳細設定＞次のシートで作業するときの表示設定＞「シートを右から左に表示する」チェックボックス<br>
+          あとはセルの設定を縦書きにすると右上→左下のシートができる．
+      </p>
+      <h3>Google Spreadsheetでの縦書き</h3>
+      <p>スプレッドシートのHOME＞ハンバーガーメニュー＞設定＞言語＞「右から左への言語オプションを常に表示する」チェックボックス<br>
+          この状態でファイルを開くと、ツールバーに「シート（右から左へ）」ボタンが表示される．<br>
+          あとはセルを縦書きにしてやればよい．なお、縦書きにしてもGoogle Spreadsheetでは紂物や記号類は横書き仕様のままなので見栄えは微妙だが許容範囲だろう．
+      </p>
     </article>
   </section>
   <footer>
-    <p>&copy; 2025 Kengo.</p>
+    <p>&copy; 2025 BlackStraySheep.</p>
   </footer>
   <script src="../script.js"></script>
 </body>

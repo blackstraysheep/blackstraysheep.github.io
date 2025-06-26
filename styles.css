@@ -37,3 +37,18 @@ footer { text-align:center; padding:1rem 0; background:var(--secondary-color); m
   font-size: 0.9rem;
   margin-bottom: 1rem;
 }
+
+
+/* Archive list styling */
+.archive-list {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+.archive-list li a {
+  text-decoration: none;
+  color: var(--primary-color);
+  font-weight: 500;
+}
