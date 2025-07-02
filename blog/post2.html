@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>開発備忘録: GitHubトークン取得からElectronビルド、Gitの空コミットまで</title>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../post.css">
+</head>
+<body>
+  <section id="post-content" class="container">
+    <h1>開発備忘録: GitHubトークン取得からElectronビルド、Gitの空コミットまで</h1>
+    <p class="post-date">2025-07-03</p>
+    <article>
+      <h3>1. GitHub Personal Access Token の取得</h3>
+      <p>以下の URL にアクセスし、必要なスコープを選択してトークンを発行．</p>
+      <pre><code>https://github.com/settings/personal-access-tokens</code></pre>
+
+      <h3>2. PowerShell 実行ポリシーの設定</h3>
+      <p>Windows 上でスクリプトを一時的に許可するには、管理者権限の PowerShell で：</p>
+      <pre><code>Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope Process</code></pre>
+      <p><code>-Scope Process</code> を使うと、そのセッションのみポリシー変更できる．</p>
+
+      <h3>3. Electron アプリのビルドと公開</h3>
+      <p>Electron-builder を使って Windows 向けにビルド＆常に公開：</p>
+      <pre><code>npx electron-builder --win --publish always</code></pre>
+      <p>--publish always によって、ビルド完了後に自動でリリースを GitHub Releases などにアップロード．</p>
+
+      <h3>4. Git の空コミットと取り消し</h3>
+      <p>変更なしで履歴だけ追加したい場合：</p>
+      <pre><code>git commit --allow-empty -m "コミットメッセージ"</code></pre>
+      <p>直前のコミットを取り消したい場合：</p>
+      <pre><code>git reset --soft HEAD^</code></pre>
+    </article>
+  </section>
+</body>
+</html>
