@@ -59,9 +59,16 @@ p code, li code {
   writing-mode: vertical-rl;
   text-orientation: mixed;
   font-family: 'Hiragino Mincho ProN', 'Noto Serif JP', 'Yu Mincho', serif;
+  letter-spacing: 0.1em;
   line-height: 2.2;
   background: #fff;
-  padding: 0.5em 1em;
+  padding: 1em;
+  padding-top: 3em;
+}
+
+/* 段落頭はさらに1字下げ */
+article.vertical-text > p {
+  text-indent: 1em;
 }
 
 /* waka（和歌）用クラス */
@@ -69,4 +76,13 @@ p code, li code {
   font-weight: bold;
   font-size: 1em;
   letter-spacing: 0.15em;
+}
+
+/* 縦書きレイアウトのブロック */
+.post-vertical-flex {
+  display: flex;
+  flex-direction: row-reverse;
+  gap: 2em;
+  align-items: flex-end;
+  justify-content: flex-start;
 }
