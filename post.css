@@ -54,3 +54,13 @@ p code, li code {
   font-family: 'Consolas', 'Monaco', 'Courier New', monospace;
   font-size: 0.9em;
 }
+/* 縦書き用クラス */
+.vertical-text {
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+  font-family: 'Noto Sans JP', serif;
+  letter-spacing: 0.1em;
+  line-height: 2.2;
+  background: #fff;
+  padding: 0.5em 1em;
+}
