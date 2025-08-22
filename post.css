@@ -67,5 +67,6 @@ p code, li code {
 /* waka（和歌）用クラス */
 .waka {
   font-weight: bold;
+  font-size: 1em;
   letter-spacing: 0.15em;
 }
