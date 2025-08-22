@@ -89,4 +89,6 @@ article.vertical-text > p {
   gap: 2em;
   align-items: flex-end;
   justify-content: flex-start;
+  overflow-x: auto;
+  white-space: nowrap;
 }
