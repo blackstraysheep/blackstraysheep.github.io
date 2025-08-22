@@ -31,25 +31,21 @@ async function autoDetectBlogPosts() {
 
   try {
     const posts = [];
+    const kogoPosts = [];
     const maxPosts = 20;
+    const maxKogo = 20;
 
-    console.log(`post1.html から post${maxPosts}.html まで検索を開始します`);
-
+    // 通常記事
     for (let i = 1; i <= maxPosts; i++) {
       const filename = `post${i}.html`;
       try {
-        console.log(`${filename} を検索中...`);
         const response = await fetch(filename);
         if (response.ok) {
-          console.log(`${filename} が見つかりました`);
           const html = await response.text();
           const doc = new DOMParser().parseFromString(html, 'text/html');
           const title = doc.querySelector('#post-content h1')?.textContent.trim();
           const dateEl = doc.querySelector('.post-date');
           const date = dateEl?.textContent.trim();
-          
-          console.log(`${filename} - タイトル: "${title}", 日付: "${date}"`);
-          
           if (title && date) {
             posts.push({
               filename: filename,
@@ -57,16 +53,34 @@ async function autoDetectBlogPosts() {
               date: date,
               dateObj: new Date(date)
             });
-            console.log(`${filename} を記事リストに追加しました`);
-          } else {
-            console.warn(`${filename} にタイトルまたは日付が見つかりません`);
           }
-        } else {
-          console.log(`${filename} は存在しません (${response.status})`);
         }
       } catch (error) {
-        // ファイルが存在しない場合は無視
-        console.log(`${filename} の取得に失敗: ${error.message}`);
+        continue;
+      }
+    }
+
+    // 古語日記シリーズ
+    for (let i = 1; i <= maxKogo; i++) {
+      const filename = `kogo${i}.html`;
+      try {
+        const response = await fetch(filename);
+        if (response.ok) {
+          const html = await response.text();
+          const doc = new DOMParser().parseFromString(html, 'text/html');
+          const title = doc.querySelector('#post-content h1')?.textContent.trim();
+          const dateEl = doc.querySelector('.post-date');
+          const date = dateEl?.textContent.trim();
+          if (title && date) {
+            kogoPosts.push({
+              filename: filename,
+              title: title,
+              date: date,
+              dateObj: new Date(date)
+            });
+          }
+        }
+      } catch (error) {
         continue;
       }
     }
@@ -91,31 +105,57 @@ async function autoDetectBlogPosts() {
 
     // 日付順でソート（新しい順）
     posts.sort((a, b) => b.dateObj - a.dateObj);
+    kogoPosts.sort((a, b) => b.dateObj - a.dateObj);
 
     // 既存のリンクをクリア
     sidebarList.innerHTML = '';
 
-    // 新しいリンクを追加
-    posts.forEach(post => {
-      const li = document.createElement('li');
-      const link = document.createElement('a');
-      link.href = post.filename;
-      link.className = 'post-link';
-      link.target = 'post-frame';
-      link.textContent = `${post.date} – ${post.title}`;
-      li.appendChild(link);
-      sidebarList.appendChild(li);
-      console.log(`サイドバーに追加: ${post.date} – ${post.title}`);
-    });
+    // 古語日記セクション
+    if (kogoPosts.length > 0) {
+      const kogoHeader = document.createElement('h3');
+      kogoHeader.textContent = '古語日記';
+      sidebarList.appendChild(kogoHeader);
+      const kogoUl = document.createElement('ul');
+      kogoUl.className = 'kogo-list';
+      kogoPosts.forEach(post => {
+        const li = document.createElement('li');
+        const link = document.createElement('a');
+        link.href = post.filename;
+        link.className = 'post-link';
+        link.target = 'post-frame';
+        link.textContent = `${post.date} – ${post.title}`;
+        li.appendChild(link);
+        kogoUl.appendChild(li);
+      });
+      sidebarList.appendChild(kogoUl);
+    }
 
-    console.log(`自動検出により${posts.length}件の記事をサイドバーに追加しました`);
-
-    // 最新の記事を iframe に表示
+    // 通常記事セクション
     if (posts.length > 0) {
+      const normalHeader = document.createElement('h3');
+      normalHeader.textContent = '通常記事';
+      sidebarList.appendChild(normalHeader);
+      const normalUl = document.createElement('ul');
+      normalUl.className = 'normal-list';
+      posts.forEach(post => {
+        const li = document.createElement('li');
+        const link = document.createElement('a');
+        link.href = post.filename;
+        link.className = 'post-link';
+        link.target = 'post-frame';
+        link.textContent = `${post.date} – ${post.title}`;
+        li.appendChild(link);
+        normalUl.appendChild(li);
+      });
+      sidebarList.appendChild(normalUl);
+    }
+
+    // 最新記事（古語日記優先）
+    const latest = kogoPosts[0] || posts[0];
+    if (latest) {
       const iframe = document.getElementById('post-frame');
       if (iframe) {
-        iframe.src = posts[0].filename;
-        console.log(`iframeに最新記事を表示: ${posts[0].filename}`);
+        iframe.src = latest.filename;
       }
     }
 
