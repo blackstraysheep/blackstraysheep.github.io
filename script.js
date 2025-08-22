@@ -23,7 +23,7 @@ async function autoDetectBlogPosts() {
   
   const sidebarList = document.querySelector('.sidebar-list');
   if (!sidebarList) {
-    console.error('sidebar-list 要素が見つかりません');
+    console.warn('sidebar-list 要素が見つかりません');
     return;
   }
 
