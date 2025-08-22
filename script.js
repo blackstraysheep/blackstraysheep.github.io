@@ -23,7 +23,7 @@ async function autoDetectBlogPosts() {
   if (!sidebarList) return;
 
   try {
-    const response = await fetch('blog/posts.json');
+    const response = await fetch('posts.json');
     const data = await response.json();
     sidebarList.innerHTML = '';
 
