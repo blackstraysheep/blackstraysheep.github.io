@@ -68,6 +68,8 @@ p code, li code {
   background: #fff;
   padding: 1em;
   padding-top: 3em;
+  overflow-x: auto;
+  max-height: calc(100vh - 100px);
 }
 
 /* 段落頭はさらに1字下げ */
@@ -89,6 +91,4 @@ article.vertical-text > p {
   gap: 2em;
   align-items: flex-end;
   justify-content: flex-start;
-  overflow-x: auto;
-  white-space: nowrap;
 }
