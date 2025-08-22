@@ -2,7 +2,7 @@
   --primary-color: #E60012;
   --secondary-color: #FFFFFF;
   --text-color: #333333;
-  --font: 'Noto Sans JP', sans-serif;
+  --font: 'Hiragino Mincho ProN', 'Hiragino Kaku Gothic ProN', 'Noto Serif JP', 'Noto Sans JP', 'Yu Mincho', 'Yu Gothic', 'Meiryo', serif, sans-serif;
 }
 * { margin: 0; padding: 0; box-sizing: border-box; }
 body { font-family: var(--font); color: var(--text-color); background: var(--secondary-color); line-height: 1.6; }
@@ -58,9 +58,16 @@ p code, li code {
 .vertical-text {
   writing-mode: vertical-rl;
   text-orientation: mixed;
-  font-family: 'Noto Sans JP', serif;
+  font-family: 'Hiragino Mincho ProN', 'Noto Serif JP', 'Yu Mincho', serif;
   letter-spacing: 0.1em;
   line-height: 2.2;
   background: #fff;
   padding: 0.5em 1em;
+}
+
+/* waka（和歌）用クラス */
+.waka {
+  font-weight: bold;
+  font-size: 1.1em;
+  letter-spacing: 0.15em;
 }
