@@ -1,0 +1,10 @@
+{
+  "kogo": [
+    { "filename": "kogo1.html", "title": "シリーズ古語日記 その一", "date": "2025-08-21" },
+    { "filename": "kogo2.html", "title": "シリーズ古語日記 その二", "date": "2025-08-22" }
+  ],
+  "normal": [
+    { "filename": "post1.html", "title": "Excel/Google Spreadsheetでの縦書き", "date": "2025-06-26" },
+    { "filename": "post2.html", "title": "開発備忘録", "date": "2025-07-03" }
+  ]
+}
