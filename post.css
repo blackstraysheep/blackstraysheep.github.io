@@ -59,7 +59,6 @@ p code, li code {
   writing-mode: vertical-rl;
   text-orientation: mixed;
   font-family: 'Hiragino Mincho ProN', 'Noto Serif JP', 'Yu Mincho', serif;
-  letter-spacing: 0.1em;
   line-height: 2.2;
   background: #fff;
   padding: 0.5em 1em;
@@ -68,6 +67,5 @@ p code, li code {
 /* waka（和歌）用クラス */
 .waka {
   font-weight: bold;
-  font-size: 1.1em;
   letter-spacing: 0.15em;
 }
