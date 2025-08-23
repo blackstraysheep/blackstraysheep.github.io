@@ -69,7 +69,6 @@ p code, li code {
   padding: 1em;
   padding-top: 3em;
   overflow-x: auto;
-  max-height: calc(100vh - 100px);
 }
 
 /* 段落頭はさらに1字下げ */
