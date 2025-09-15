@@ -5,6 +5,7 @@
   ],
   "normal": [
     { "filename": "post1.html", "title": "Excel/Google Spreadsheetでの縦書き", "date": "2025-06-26" },
-    { "filename": "post2.html", "title": "開発備忘録", "date": "2025-07-03" }
+    { "filename": "post2.html", "title": "開発手順備忘録", "date": "2025-07-03" },
+    { "filename": "post3.html", "title": "Google Formの簡便なentryキー取得", "date": "2025-09-16" }
   ]
 }
