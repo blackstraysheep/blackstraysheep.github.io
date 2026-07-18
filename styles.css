@@ -151,3 +151,23 @@ footer { text-align: center; padding: 1rem 0; background: var(--secondary-color)
   border-top: none;
   border-bottom: none;
 }
+
+/* Keep the phone layout after the desktop blog rules above. */
+@media (max-width: 768px) {
+  .content-area {
+    height: auto;
+    margin-top: 76px;
+  }
+  .sidebar {
+    flex: none;
+  }
+  .sidebar-list li {
+    margin-bottom: 0.45rem;
+  }
+  .content iframe {
+    height: 70svh;
+    min-height: 480px;
+    border: 0;
+    border-top: 2px solid #ddd;
+  }
+}
